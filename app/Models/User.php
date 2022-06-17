@@ -17,8 +17,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
+     protected $fillable = [
+        'owners_name',
+        'occupers_name',
+        'phone',
+        'location',
+        'block_number',
+        'flat_number',
+        'img',
         'email',
         'password',
     ];
@@ -32,6 +38,23 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+     public function lbic()
+    {
+        return $this->usertype == 1 ? true : false;
+    }
+
+
+    public function sbil()
+    {
+        return $this->usertype == 2 ? true : false;
+    }
+
+    public function user()
+    {
+        return $this->usertype == 0 ? true : false;
+    }
+
 
     /**
      * The attributes that should be cast.
