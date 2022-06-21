@@ -16,6 +16,7 @@ class SiblMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+         Auth::shouldUse('api');
          if(Auth::check() && Auth::user()->sibl())
         {
             return $next($request);

@@ -17,6 +17,7 @@ class LbicMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+         Auth::shouldUse('api');
         if(Auth::check() && Auth::user()->lbic())
         {
             return $next($request);

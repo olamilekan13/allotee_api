@@ -179,6 +179,36 @@ catch (\Exception $e) {
     
 
 
+     public function show($id){
+
+        try{
+            $user = User::find($id);
+        // if(is_null($user)){
+
+        //     return response()->json([
+        //     "success" => false,
+        //     "message" => "product  not shown Succesfully",
+        //     "data" => "$user"
+        // ]);
+
+
+        // }
+
+        return response()->json([
+            "success" => true,
+            "message" => "member shown Succesfully",
+            "data" => "$user"
+        ]);
+    }catch (\Exception $e) {
+        // Return Json Response
+        return response()->json([
+            'message' => $e->getMessage()
+        ],500);
+    }
+
+    }
+
+
 
 
 
