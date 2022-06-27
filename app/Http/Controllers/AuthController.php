@@ -182,7 +182,8 @@ catch (\Exception $e) {
      public function show($id){
 
         try{
-            $user = User::find($id);
+             $user = User::findOrFail($id);
+            // $user = User::find($id);
         // if(is_null($user)){
 
         //     return response()->json([

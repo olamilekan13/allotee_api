@@ -21,3 +21,21 @@ use App\Http\Controllers\AuthController;
 
 Route::post('auth/login', [AuthController::class, 'login']);
 Route::post('auth/register', [AuthController::class, 'register']);
+
+
+Route::group(['middleware' => 'user_auth'], function () {
+    Route::group(['prefix' => 'auth'], function () {
+
+
+
+Route::get('show/{id}', [AuthController::class, 'show']);  
+
+
+
+
+
+
+
+      
+});
+});

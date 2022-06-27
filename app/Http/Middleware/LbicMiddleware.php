@@ -22,6 +22,10 @@ class LbicMiddleware
         {
             return $next($request);
         }
-        return redirect()->route('login')->with('danger', 'Unauthorized');
+
+        return response()->json([
+            'error' => 'Unauthorized'
+        ], 401);
+        // return redirect()->route('login')->with('danger', 'Unauthorized');
     }
 }

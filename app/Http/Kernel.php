@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http;
+use App\Http\Middleware\LbicMiddleware;
+use App\Http\Middleware\SiblMiddleware;
+use App\Http\Middleware\UserMiddleware;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
