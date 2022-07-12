@@ -39,7 +39,7 @@ class User extends Authenticatable implements JWTSubject
     }
 
 
-    public function sbil()
+    public function sibl()
     {
         return $this->usertype == 2 ? true : false;
     }
